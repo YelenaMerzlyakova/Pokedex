@@ -3,6 +3,7 @@ let input = document.querySelector(".pokemon-input");
 const pokemonName = document.querySelector(".pokemon-name");
 const pokemonImage = document.querySelector(".pokemon-image");
 const pokemonMoves = document.querySelector(".pokemon-moves");
+const moves = [];
 
 function getPokemonData() {
   console.log(apiUrl);
