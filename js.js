@@ -3,6 +3,7 @@ let input = document.querySelector(".pokemon-input");
 const pokemonName = document.querySelector(".pokemon-name");
 const pokemonImage = document.querySelector(".pokemon-image");
 let pokemonMoves = document.getElementsByClassName("pokemon-moves");
+const clearMoves = document.getElementById("moves");
 
 function getPokemonData() {
   const moves = [];
@@ -27,7 +28,7 @@ function getPokemonData() {
     .catch(function(error) {
       pokemonName.innerHTML = "(An error has occurred.)";
       pokemonImage.src = "";
-      pokemonMoves[i].innerHTML = "tetsst"; /*error not yet working*/
+      clearMoves.innerHTML = ""; /*error not yet working*/
     });
 }
 
