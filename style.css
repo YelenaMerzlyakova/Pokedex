@@ -20,9 +20,10 @@ div {
   text-transform: capitalize;
   font-weight: bold;
 }
-/* img {
-  display: block;
-} */
+img {
+  width: 200px;
+  height: 200px;
+}
 button {
   background-color: white;
   border-style: none;
