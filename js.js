@@ -13,6 +13,9 @@ function getPokemonData() {
       pokemonName.innerHTML =
         response.data.forms[0].name + " " + response.data.id;
       pokemonMoves.innerHTML = response.data.moves[0].move.name;
+      pokemonMoves.innerHTML = response.data.moves[1].move.name;
+      pokemonMoves.innerHTML = response.data.moves[2].move.name;
+      pokemonMoves.innerHTML = response.data.moves[3].move.name;
       pokemonImage.src = response.data.sprites.front_default;
     })
     .catch(function(error) {
@@ -20,6 +23,10 @@ function getPokemonData() {
       pokemonImage.src = "";
     });
 }
+
+var user = jsonArray .map((user, index) => { 
+    return { 'id': user.id, 'name' : user.name.split(' ')[0] }; 
+}).slice(0, 2)
 
 var button = document.querySelector(".pokemon-button");
 button.addEventListener("click", getPokemonData);
