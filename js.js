@@ -1,22 +1,22 @@
-const link = "https://pokeapi.co/api/v2/polemon";
-let response = await axios.get(link);
-console.log(pokedex);
-
-
 var apiUrl = "https://pokeapi.co/api/v2/pokemon/";
 var input = document.querySelector(".pokemon-input");
 var pokemonName = document.querySelector(".pokemon-name");
 var pokemonImage = document.querySelector(".pokemon-image");
+var pokemonId = document.getElementById("pokemon-id");
 
 function getPokemonData() {
-    axios.get(apiUrl + input.value)
-    .then(function (response) {
-        pokemonName.innerHTML = response.data.forms[0].name;
-        pokemonImage.src = response.data.sprites.front_default;
+  axios
+    .get(apiUrl + input.value)
+    .then(function(response) {
+      console.log(response);
+      pokemonName.innerHTML =
+        response.data.forms[0].name + " " + response.data.id;
+      // pokemonId.innerHTML = response.data.id;
+      pokemonImage.src = response.data.sprites.front_default;
     })
-    .catch(function (error) {
-        pokemonName.innerHTML = "(An error has occurred.)";
-        pokemonImage.src = "";
+    .catch(function(error) {
+      pokemonName.innerHTML = "(An error has occurred.)";
+      pokemonImage.src = "";
     });
 }
 
