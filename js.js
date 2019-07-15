@@ -5,7 +5,7 @@ const pokemonName = document.querySelector(".pokemon-name");
 const pokemonImage = document.querySelector(".pokemon-image");
 let pokemonMoves = document.getElementsByClassName("pokemon-moves");
 let clearMoves = document.getElementById("moves");
-let pokeEvo = document.getElementsByClassName("evo");
+let pokeEvo = document.getElementById("evo");
 
 function getPokemonData() {
   const moves = [];
@@ -28,13 +28,18 @@ function getPokemonData() {
       .get(apiEvo)
       .then(function(responseEvo) {
         console.log(responseEvo.data);
-        pokeEvo.innerHTML = responseEvo.data.evolves_from_species.name;
+        //pokeEvo.innerHTML = responseEvo.data.evolves_from_species.name;
+        if (responseEvo.data.evolves_from_species == null) {
+          pokeEvo.innerHTML = "Basic Pokemon";
+        } else {
+          pokeEvo.innerHTML = responseEvo.data.evolves_from_species.name;
+        }
         console.log(pokeEvo.innerHTML);
         
       })
       .catch(function(error) {
         pokemonName.innerHTML = "(An error has occurred.)";
-        pokeEvo.innerHTML = "";
+        //pokeEvo.innerHTML = "";
         pokemonImage.src = "";
         clearMoves.innerHTML = "";
       });
