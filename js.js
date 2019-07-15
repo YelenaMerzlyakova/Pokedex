@@ -22,11 +22,11 @@ function getPokemonData() {
       moves.push(response.data.moves[i].move.name);
       pokemonMoves[i].innerHTML = moves[i];
     }
-    var apiEvo = `https://pokeapi.co/api/v2/evolution-chain/${ID}`;
+    var apiEvo = `https://pokeapi.co/api/v2/pokemon-species/${ID}`;
     axios
       .get(apiEvo)
       .then(function(responseEvo) {
-        console.log(responseEvo);
+        console.log(responseEvo.data.evolves_from_species);
       })
 
       .catch(function(error) {
