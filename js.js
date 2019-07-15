@@ -24,14 +24,11 @@ function getPokemonData() {
     });
 }
 
-var user = jsonArray .map((user, index) => { 
-    return { 'id': user.id, 'name' : user.name.split(' ')[0] }; 
-}).slice(0, 2)
 
 var button = document.querySelector(".pokemon-button");
 button.addEventListener("click", getPokemonData);
 input.addEventListener("keypress", function(e) {
-  if (e.keyCode == 13) {
-    getPokemonData();
-  }
-});
+    if (e.keyCode == 13) {
+      getPokemonData();
+    }
+  });
