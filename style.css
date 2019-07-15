@@ -1,0 +1,22 @@
+body {
+    width: 40rem;
+    margin: auto;
+    font-family: sans-serif;
+}
+div {
+    margin-bottom: 1rem;
+}
+.pokemon-name {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+img {
+    display: block;
+}
+button {
+    background-color: white;
+    border-style: none;
+    border: solid 1px black;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
