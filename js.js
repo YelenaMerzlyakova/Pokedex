@@ -4,7 +4,8 @@ let input = document.querySelector(".pokemon-input");
 const pokemonName = document.querySelector(".pokemon-name");
 const pokemonImage = document.querySelector(".pokemon-image");
 let pokemonMoves = document.getElementsByClassName("pokemon-moves");
-const clearMoves = document.getElementById("moves");
+let clearMoves = document.getElementById("moves");
+let pokeEvo = document.getElementsByClassName("evo");
 
 function getPokemonData() {
   const moves = [];
@@ -12,8 +13,7 @@ function getPokemonData() {
 
   axios.get(apiUrl + input.value).then(function(response) {
     console.log(response);
-    pokemonName.innerHTML =
-      response.data.forms[0].name + " ID: " + response.data.id;
+    pokemonName.innerHTML = response.data.forms[0].name + " ID: " + response.data.id;
     var ID = response.data.id;
     console.log(ID);
 
@@ -22,15 +22,19 @@ function getPokemonData() {
       moves.push(response.data.moves[i].move.name);
       pokemonMoves[i].innerHTML = moves[i];
     }
+    
     var apiEvo = `https://pokeapi.co/api/v2/pokemon-species/${ID}`;
     axios
       .get(apiEvo)
       .then(function(responseEvo) {
-        console.log(responseEvo.data.evolves_from_species);
+        console.log(responseEvo.data);
+        pokeEvo.innerHTML = responseEvo.data.evolves_from_species.name;
+        console.log(pokeEvo.innerHTML);
+        
       })
-
       .catch(function(error) {
         pokemonName.innerHTML = "(An error has occurred.)";
+        pokeEvo.innerHTML = "";
         pokemonImage.src = "";
         clearMoves.innerHTML = "";
       });
