@@ -1,4 +1,5 @@
 const apiUrl = "https://pokeapi.co/api/v2/pokemon/";
+
 let input = document.querySelector(".pokemon-input");
 const pokemonName = document.querySelector(".pokemon-name");
 const pokemonImage = document.querySelector(".pokemon-image");
@@ -8,28 +9,32 @@ const clearMoves = document.getElementById("moves");
 function getPokemonData() {
   const moves = [];
   console.log(apiUrl);
-  axios
-    .get(apiUrl + input.value)
-    .then(function(response) {
-      console.log(response);
-      pokemonName.innerHTML =
-        response.data.forms[0].name + " " + response.data.id;
 
-      pokemonImage.src = response.data.sprites.front_default;
-      for (let i = 0; i < 4; i++) {
-        moves.push(response.data.moves[i].move.name);
+  axios.get(apiUrl + input.value).then(function(response) {
+    console.log(response);
+    pokemonName.innerHTML =
+      response.data.forms[0].name + " ID: " + response.data.id;
+    var ID = response.data.id;
+    console.log(ID);
 
-        console.log(moves);
-        pokemonMoves[i].innerHTML = moves[i];
-        console.log(pokemonMoves[i]);
-      }
-    })
+    pokemonImage.src = response.data.sprites.front_default;
+    for (let i = 0; i < 4; i++) {
+      moves.push(response.data.moves[i].move.name);
+      pokemonMoves[i].innerHTML = moves[i];
+    }
+    var apiEvo = `https://pokeapi.co/api/v2/evolution-chain/${ID}`;
+    axios
+      .get(apiEvo)
+      .then(function(responseEvo) {
+        console.log(responseEvo);
+      })
 
-    .catch(function(error) {
-      pokemonName.innerHTML = "(An error has occurred.)";
-      pokemonImage.src = "";
-      clearMoves.innerHTML = ""; /*error not yet working*/
-    });
+      .catch(function(error) {
+        pokemonName.innerHTML = "(An error has occurred.)";
+        pokemonImage.src = "";
+        clearMoves.innerHTML = "";
+      });
+  });
 }
 
 var button = document.querySelector(".pokemon-button");
