@@ -2,6 +2,12 @@ body {
   width: 100vw;
   margin: 0 auto;
   font-family: sans-serif;
+  max-width: 1280px;
+  background-color: rgb(165, 61, 61);
+s}
+.wrapper {
+  text-align: center;
+  margin: 0 auto;
 }
 div {
   margin-bottom: 1rem;
@@ -14,13 +20,23 @@ div {
   text-transform: capitalize;
   font-weight: bold;
 }
-img {
+/* img {
   display: block;
-}
+} */
 button {
   background-color: white;
   border-style: none;
   border: solid 1px black;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+}
+#moves {
+  display: flex;
+  flex-direction: column;
+  margin-left: 45%;
+  text-align: left;
+}
+
+.pokemon-moves {
+  margin: 10px 0;
 }
