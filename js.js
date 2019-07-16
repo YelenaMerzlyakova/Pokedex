@@ -6,6 +6,7 @@ const pokemonImage = document.querySelector(".pokemon-image");
 //let pokemonMoves = document.getElementsByClassName("pokemon-moves");
 // let clearMoves = document.getElementById("moves");
 let pokeEvo = document.getElementById("evo");
+let img2 = document.querySelector(".img2");
 
 let pokemove1 = document.getElementById("pokemon-moves1");
 let pokemove2 = document.getElementById("pokemon-moves2");
@@ -35,10 +36,12 @@ function getPokemonData() {
       pokemove3.innerHTML = response.data.moves[2].move.name;
       pokemove4.innerHTML = response.data.moves[3].move.name;
 
-      var apiEvo = `https://pokeapi.co/api/v2/pokemon-species/${ID};`;
+      var apiEvo = `https://pokeapi.co/api/v2/pokemon-species/${ID}`;
       axios
         .get(apiEvo)
         .then(function(responseEvo) {
+          // img2.src = "responseEvo.data.evolution_chain.url";
+
           pokeEvo.innerHTML = responseEvo.data.evolves_from_species.name;
         })
         .catch(function(error) {
