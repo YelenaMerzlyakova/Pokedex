@@ -15,6 +15,7 @@ let pokemove4 = document.getElementById("pokemon-moves4");
 
 function getPokemonData() {
   pokemonImage.style.display = "inline";
+
   // const moves = [];
 
   console.log(apiUrl + input.value);
@@ -22,6 +23,7 @@ function getPokemonData() {
   axios
     .get(apiUrl + input.value)
     .then(function(response) {
+      console.log(response);
       pokemonName.innerHTML =
         response.data.forms[0].name + " ID: " + response.data.id;
       var ID = response.data.id;
@@ -40,7 +42,17 @@ function getPokemonData() {
       axios
         .get(apiEvo)
         .then(function(responseEvo) {
-          // img2.src = "responseEvo.data.evolution_chain.url";
+          console.log(responseEvo);
+          var evoId = ID - 1;
+          console.log(evoId);
+          console.log(apiUrl + evoId);
+          axios.get(apiUrl + evoId).then(function(responseEvoImg) {
+            img2.src = responseEvoImg.data.sprites.front_default;
+            img2.style.display = "inline";
+            if (pokeEvo.innerHTML == "Basic Pokemon") {
+              img2.style.display = "";
+            }
+          });
 
           pokeEvo.innerHTML = responseEvo.data.evolves_from_species.name;
         })

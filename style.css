@@ -32,7 +32,7 @@ img2 {
   width: 200px;
   height: 200px;
   border: none;
-  /* display: none; */
+  display: none;
 }
 button {
   background-color: white;
