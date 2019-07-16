@@ -2,7 +2,8 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: "Montserrat", sans-serif;
+
   max-width: 1280px;
   background: url("./assets/pics/pokeball.jpg");
   background-size: cover;
@@ -44,11 +45,12 @@ img2 {
   display: none;
 }
 button {
-  background-color: white;
+  background-color: rgb(255, 224, 224);
   border-style: none;
   border: solid 1px black;
   padding: 0.25rem 0.5rem;
   cursor: pointer;
+  border-radius: 10px;
 }
 #moves {
   display: flex;
