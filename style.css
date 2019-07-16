@@ -4,16 +4,25 @@ body {
   margin: 0 auto;
   font-family: sans-serif;
   max-width: 1280px;
-  background-color: rgb(165, 61, 61);
+  background: url("./assets/pics/pokeball.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: opacity(0.9);
+  padding-left: 30px;
+  color: rgb(247, 230, 230);
 }
 .wrapper {
-  text-align: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: row;
 }
 /* div {
   margin-bottom: 1rem;
 } */
 .pokemon-name {
+  display: block;
+  padding-top: 40px;
   text-transform: capitalize;
   font-weight: bold;
 }
@@ -44,7 +53,7 @@ button {
 #moves {
   display: flex;
   flex-direction: column;
-  margin-left: 45%;
+  /* margin-left: 45%; */
   text-align: left;
 }
 
@@ -52,12 +61,16 @@ button {
   margin: 10px 0;
 }
 
-.evo {
-  display: inline-block;
+#evolution {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  /* padding-top: 40px; */
 }
 
-/* .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-} */
+#searched {
+  margin-left: 10px;
+}
+#h2 {
+  display: none;
+}

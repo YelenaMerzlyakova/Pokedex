@@ -8,31 +8,34 @@
     <title>Pokédex</title>
   </head>
   <body>
+    <h1>Search your Pokémon</h1>
+    <div id='input'>
+      Please Enter an ID or a Name:
+      <input type="text" class="pokemon-input" autofocus placeholder="search pokemon"></input>
+      <button class="pokemon-button">Get Pokémon Data</button>
+    </div>
+    
     <div class="wrapper">
-    <h1>Using Axios to get Pokémon Data</h1>
-        <div>
-            Please Enter an ID or a Name:
-            <input type="text" class="pokemon-input"></input>
-            <button class="pokemon-button">Load Pokémon Data</button>
-
-        </div>
-        <div>
-            <span class="pokemon-name"></span>
+      <div id="searched">
+          <span class="pokemon-name"></span>
             <span id="pokemon-id"></span>
-        </div>
-        <div class="container">
+      
         <img class="pokemon-image"></img>
         <div id='moves'>
-            <h2 id = "h2">Attacks: </h2>
+          <h2 id = "h2">Attacks: </h2>
           
                 <span class="pokemon-moves"></span>
                 <span class="pokemon-moves"></span>
                 <span class="pokemon-moves"></span>
                 <span class="pokemon-moves"></span>
-                <span id="evo"></span>
         </div>
-        <img class="img2"></img>
-    </div>
+        </div>
+        <div id="evolution">
+            <span id="evo" class="pokemon-name"> </span>
+                <img class="img2"></img>
+              </div>
+            </div>
+    
 
     <!-- javascript links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js"></script>

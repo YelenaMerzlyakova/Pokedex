@@ -16,6 +16,7 @@ let header = document.getElementById("h2");
 
 function getPokemonData() {
   pokemonImage.style.display = "inline";
+  header.style.display = "inline";
 
   const moves = [];
 
@@ -26,7 +27,7 @@ function getPokemonData() {
     .then(function(response) {
       console.log(response);
       pokemonName.innerHTML =
-        response.data.forms[0].name + " ID: " + response.data.id;
+        response.data.forms[0].name + ", ID: " + response.data.id;
       var ID = response.data.id;
       pokemonImage.src = response.data.sprites.front_default;
 
@@ -60,7 +61,8 @@ function getPokemonData() {
             }
           });
 
-          pokeEvo.innerHTML = responseEvo.data.evolves_from_species.name;
+          pokeEvo.innerHTML =
+            "Evolved from: " + responseEvo.data.evolves_from_species.name;
         })
         .catch(function(error) {
           pokeEvo.innerHTML = "Basic Pokemon";
