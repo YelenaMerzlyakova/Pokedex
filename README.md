@@ -16,7 +16,11 @@ We first made a rough html draw, then implemented the first Poke API, and called
 
 
 ### License:
-use whatever code you want ;) 
+Use whatever code you want   😉
+and go catch'em all!!
+
+Happy Hunting,
+[Yelena](https://github.com/YelenaMerzlyakova) and [Kris](https://github.com/krisderycke)
 
 
 
