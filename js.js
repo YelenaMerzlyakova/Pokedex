@@ -49,7 +49,7 @@ function getPokemonData() {
           axios.get(apiUrl + evoId).then(function(responseEvoImg) {
             img2.src = responseEvoImg.data.sprites.front_default;
             img2.style.display = "inline";
-            if (pokeEvo.innerHTML == "Basic Pokemon") {
+            if (pokeEvo.innerHTML == "Basic Pokemon" || evoId == "0") {
               img2.style.display = "";
             }
           });
