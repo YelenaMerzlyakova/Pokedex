@@ -46,6 +46,11 @@ function getPokemonData() {
           var evoId = ID - 1;
           console.log(evoId);
           console.log(apiUrl + evoId);
+          if (evoId == "0") {
+            img2.style.display = "";
+            pokeEvo.innerHTML = "Basic Pokemon";
+            return;
+          }
           axios.get(apiUrl + evoId).then(function(responseEvoImg) {
             img2.src = responseEvoImg.data.sprites.front_default;
             img2.style.display = "inline";
