@@ -1,5 +1,9 @@
 # Pokedex ![alt text](https://static.posters.cz/image/750/poster/pokemon-eve-i32673.jpg "Pokemon")
 
+**The objective of this exercise was to work together. It was a pleasant experience and an effortless teamwork.**
+
+Design was done by Kris. 
+
 [Here](https://krisderycke.github.io/Pokedex/) is the link to our excercise.
 
 ## What:
