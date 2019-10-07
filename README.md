@@ -6,7 +6,7 @@ Design was done by Kris.
 
 [Here](https://krisderycke.github.io/Pokedex/) is the link to our excercise.
 
-## What:
+## What: 
 Make a Pokedeck using the Pokemon API.
 Learning DOM-manipulation based on AJAX results.
 
